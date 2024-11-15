@@ -76,9 +76,11 @@ The system uses the following database tables:
 ## Setup Instructions
 
 1. Clone the repository.
-2. Open the project in **Microsoft Visual Studio**.
-3. Set up the database using the provided schema in **SQL Server Management Studio**.
-4. Build and run the application locally.
+2. Set up the database using the provided schema in **SQL Server Management Studio**.
+3. Create or use existing login with **SQL Server authentication** and select the database `Jetwin` in user mapping.
+4. Open the project in **Microsoft Visual Studio**.
+5. Edit the connection string in `app.config` file.
+6. Build and run the application locally.
 
 
 **Default Credentials**
