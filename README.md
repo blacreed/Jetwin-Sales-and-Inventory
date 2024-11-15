@@ -49,28 +49,28 @@ This is a **Computerized Sales and Inventory System** developed for **Jetwin Mot
 - **Staff**: Restricted to Dashboard, Sales, Inventory, and Report modules.
 
 ## Technologies Used
-- **Microsoft Visual Studio** (C# Windows Forms)
-- **SQL Server Management Studio**
+- **Microsoft Visual Studio 2022** (C# Windows Forms)
+- **SQL Server Management Studio 20**
 
-- 
+
 ## Database Tables
 
 The system uses the following database tables:
 
-### **1. Status**
-Holds the statuses; Active, Inactive, and Archived
-### **2. SystemUsers**
-Stores information about the users of the system, including login credentials, roles, and status.
-### **3. ContactInfo**
-Stores contact details for suppliers.
-### **4. Category**
-Stores product categories.
-### **5. Supplier**
-Stores information about suppliers, including contact details and remarks.
-### **6. Part**
-Stores part numbers for the inventory items.
-### **7. Inventory**
-Contains information about the products in stock, including quantity, price, and related details.
+`Status`: holds the statuses; Active, Inactive, and Archived
+
+`SystemUsers`: stores information about the users of the system, including login credentials, roles, and status.
+
+`ContactInfo`: stores contact details for suppliers.
+
+`Category`: stores product categories.
+
+`Supplier`: stores information about suppliers, including contact details and remarks.
+
+`Part`: stores part numbers for the inventory items.
+
+`Inventory`: contains information about the products in stock, including quantity, price, and related details.
+
 
 
 ## Setup Instructions
@@ -79,6 +79,11 @@ Contains information about the products in stock, including quantity, price, and
 2. Open the project in **Microsoft Visual Studio**.
 3. Set up the database using the provided schema in **SQL Server Management Studio**.
 4. Build and run the application locally.
+
+
+**Default Credentials**
+- admin:  admin / admin
+
 
 ## Limitations
 - This is an **offline application** and does not support integration with **barcode scanners** or external APIs like **GCash**.
