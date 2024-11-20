@@ -74,9 +74,12 @@ namespace Jetwin_Sales_and_Inventory.Utility_Class
                 using (var command = new SqlCommand(query, connection))
                 using (var adapter = new SqlDataAdapter(command))
                 {
-                    foreach (var param in parameters)
+                    if( parameters != null)
                     {
-                        command.Parameters.AddWithValue(param.Key, param.Value);
+                        foreach (var param in parameters)
+                        {
+                            command.Parameters.AddWithValue(param.Key, param.Value);
+                        }
                     }
                     var dataTable = new DataTable();
                     adapter.Fill(dataTable);
@@ -135,8 +138,22 @@ namespace Jetwin_Sales_and_Inventory.Utility_Class
         //--FOR addUser FORM
         public static bool IsUsernameTaken(string username) //CHECK IF USERNAME IN DATABASE ALREADY EXISTS
         {
-            string query = "SELECT COUNT(1) FROM SystemUsers WHERE Username = @Username";
+            string query = "SELECT COUNT(1) FROM Staff WHERE Username = @Username";
             var parameters = new Dictionary<string, object> { { "@Username", username } };
+
+            return Convert.ToInt32(ExecuteScalar(query, parameters)) > 0;
+        }
+        public static bool IsEmployeeDuplicate(string employeeName) //CHECK IF EMLOYEE NAME IN DATABASE ALREADY EXISTS
+        {
+            string query = "SELECT COUNT(1) FROM Staff WHERE EmployeeName = @EmployeeName";
+            var parameters = new Dictionary<string, object> { { "@EmployeeName", employeeName } };
+
+            return Convert.ToInt32(ExecuteScalar(query, parameters)) > 0;
+        }
+        public static bool IsContactNumberDuplicate(string contactNumber)
+        {
+            string query = "SELECT COUNT(1) FROM Staff WHERE ContactNum = @ContactNum";
+            var parameters = new Dictionary<string, object> { { "@ContactNum", contactNumber } };
 
             return Convert.ToInt32(ExecuteScalar(query, parameters)) > 0;
         }
@@ -147,39 +164,49 @@ namespace Jetwin_Sales_and_Inventory.Utility_Class
             string query = @"
                     SELECT COUNT(1)
                     FROM Supplier S
-                    JOIN ContactInfo C ON S.ContactID = C.ContactID
-                    WHERE S.SupplierName = @SupplierName OR C.ContactNum = @ContactNum";
+                    JOIN SupplierContactInfo C ON S.ContactID = C.ContactID
+                    WHERE S.Supplier = @Supplier OR C.ContactNum = @ContactNum";
 
             var parameters = new Dictionary<string, object>
             {
-                { "@SupplierName", supplierName },
+                { "@Supplier", supplierName },
                 { "@ContactNum", contactNum }
             };
 
             return Convert.ToInt32(ExecuteScalar(query,parameters)) > 0;
         }
 
-        //--FOR addInventory FORM
-        public static int? GetOrCreatePartId(string partNumber)
+        //--FOR AddClassification FORM
+        public static bool IsUniqueClassification(string classificationName, string tableName)
         {
-            string getPartIdQuery = "SELECT PartID FROM Part WHERE PartNumber = @PartNumber";
+            string query = $"SELECT COUNT(1) FROM {tableName} WHERE {tableName}Name = @ClassificationName";
 
-            var partNumberParameter = new Dictionary<string, object>
+            var parameters = new Dictionary<string, object>
             {
-                { "@PartNumber", partNumber }
+                { "@ClassificationName", classificationName }
             };
 
-            object partID = ExecuteScalar(getPartIdQuery, partNumberParameter);
+            object result = ExecuteScalar(query, parameters);
 
-            if (partID != DBNull.Value && partID != null)
+            return result != null && Convert.ToInt32(result) == 0; // True if count is 0 (unique)
+        }
+        public static bool IsUniqueAttributeValue(string attributeValue, int attributeTypeID)
+        {
+            string query = @"
+            SELECT COUNT(1) 
+            FROM AttributeValue 
+            WHERE AttributeValueName = @AttributeValueName 
+            AND AttributeTypeID = @AttributeTypeID";
+
+            var parameters = new Dictionary<string, object>
             {
-                return Convert.ToInt32(partID);
-            }
-            else
-            {
-                string insertToPartQuery = "INSERT INTO Part (PartNumber) OUTPUT INSERTED.PartID VALUES (@PartNumber)";
-                return Convert.ToInt32(ExecuteScalar(insertToPartQuery, partNumberParameter));
-            }
+                { "@AttributeValueName", attributeValue },
+                { "@AttributeTypeID", attributeTypeID }
+            };
+
+            object result = ExecuteScalar(query, parameters);
+
+            return result != null && Convert.ToInt32(result) == 0; // True if count is 0 (unique)
         }
 
         //END OF CLASS----------------------------------------

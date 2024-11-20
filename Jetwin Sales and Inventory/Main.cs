@@ -13,6 +13,10 @@ namespace Jetwin_Sales_and_Inventory
         public Main()
         {
             InitializeComponent();
+
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+
             this.IsMdiContainer = true;
         }
         private void OpenForm<T>(Button btn) where T : Form, new()

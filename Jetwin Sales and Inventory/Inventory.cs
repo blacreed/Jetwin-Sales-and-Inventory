@@ -13,22 +13,22 @@ namespace Jetwin_Sales_and_Inventory
 {
     public partial class Inventory : Form
     {
-        private DataRefreshManager refreshManager;
+        //private DataRefreshManager refreshManager;
         public Inventory()
         {
             InitializeComponent();
 
-            refreshManager = new DataRefreshManager();
+            /*refreshManager = new DataRefreshManager();
             refreshManager.OnDataUpdated += RefreshInventoryData;
             refreshManager.Start();
-            RefreshInventoryData(); //INITIAL LOAD
+            RefreshInventoryData(); //INITIAL LOAD*/
         }
 
         public DataGridView getInventoryDataGrid()
         {
             return inventoryDataGrid;
         }
-        private void RefreshInventoryData()
+        /*private void RefreshInventoryData()
         {
             if (InvokeRequired) //PREVENT CROSS THREAD ERROR
             {
@@ -43,7 +43,7 @@ namespace Jetwin_Sales_and_Inventory
         {
             refreshManager.Dispose();
             base.OnFormClosed(e);
-        }
+        }*/
 
     }
 }

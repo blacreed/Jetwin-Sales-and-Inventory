@@ -128,28 +128,34 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Maintenance Submodules\AddCategory.cs">
+    <Compile Include="Maintenance sub-modules\AddClassification.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Maintenance Submodules\AddCategory.Designer.cs">
-      <DependentUpon>AddCategory.cs</DependentUpon>
+    <Compile Include="Maintenance sub-modules\AddClassification.Designer.cs">
+      <DependentUpon>AddClassification.cs</DependentUpon>
     </Compile>
-    <Compile Include="Maintenance Submodules\AddInventory.cs">
+    <Compile Include="Maintenance sub-modules\AddInventory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Maintenance Submodules\AddInventory.Designer.cs">
+    <Compile Include="Maintenance sub-modules\AddInventory.Designer.cs">
       <DependentUpon>AddInventory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Maintenance Submodules\AddSupplier.cs">
+    <Compile Include="Maintenance sub-modules\AddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Maintenance Submodules\AddSupplier.Designer.cs">
+    <Compile Include="Maintenance sub-modules\AddProduct.Designer.cs">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance sub-modules\AddSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance sub-modules\AddSupplier.Designer.cs">
       <DependentUpon>AddSupplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="Maintenance Submodules\AddUser.cs">
+    <Compile Include="Maintenance sub-modules\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Maintenance Submodules\AddUser.Designer.cs">
+    <Compile Include="Maintenance sub-modules\AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Maintenance.cs">
@@ -189,16 +195,19 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Maintenance Submodules\AddCategory.resx">
-      <DependentUpon>AddCategory.cs</DependentUpon>
+    <EmbeddedResource Include="Maintenance sub-modules\AddClassification.resx">
+      <DependentUpon>AddClassification.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Maintenance Submodules\AddInventory.resx">
+    <EmbeddedResource Include="Maintenance sub-modules\AddInventory.resx">
       <DependentUpon>AddInventory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Maintenance Submodules\AddSupplier.resx">
+    <EmbeddedResource Include="Maintenance sub-modules\AddProduct.resx">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance sub-modules\AddSupplier.resx">
       <DependentUpon>AddSupplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Maintenance Submodules\AddUser.resx">
+    <EmbeddedResource Include="Maintenance sub-modules\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maintenance.resx">

@@ -37,6 +37,10 @@
             this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             this.label3 = new System.Windows.Forms.Label();
             this.userDetailsPanel = new System.Windows.Forms.Panel();
+            this.confirmPasswordPanel = new ReaLTaiizor.Controls.Panel();
+            this.tbConfirmPassword = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.contactNumPanel = new ReaLTaiizor.Controls.Panel();
             this.tbContactNum = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -54,6 +58,7 @@
             this.employeeNamePanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.userDetailsPanel.SuspendLayout();
+            this.confirmPasswordPanel.SuspendLayout();
             this.contactNumPanel.SuspendLayout();
             this.passwordPanel.SuspendLayout();
             this.usernamePanel.SuspendLayout();
@@ -178,14 +183,68 @@
             // 
             // userDetailsPanel
             // 
+            this.userDetailsPanel.Controls.Add(this.confirmPasswordPanel);
             this.userDetailsPanel.Controls.Add(this.contactNumPanel);
             this.userDetailsPanel.Controls.Add(this.passwordPanel);
             this.userDetailsPanel.Controls.Add(this.usernamePanel);
             this.userDetailsPanel.Controls.Add(this.employeeNamePanel);
             this.userDetailsPanel.Location = new System.Drawing.Point(41, 48);
             this.userDetailsPanel.Name = "userDetailsPanel";
-            this.userDetailsPanel.Size = new System.Drawing.Size(580, 165);
+            this.userDetailsPanel.Size = new System.Drawing.Size(580, 196);
             this.userDetailsPanel.TabIndex = 4;
+            // 
+            // confirmPasswordPanel
+            // 
+            this.confirmPasswordPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
+            this.confirmPasswordPanel.Controls.Add(this.tbConfirmPassword);
+            this.confirmPasswordPanel.Controls.Add(this.label11);
+            this.confirmPasswordPanel.Controls.Add(this.label12);
+            this.confirmPasswordPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.confirmPasswordPanel.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(50)))));
+            this.confirmPasswordPanel.Location = new System.Drawing.Point(0, 114);
+            this.confirmPasswordPanel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
+            this.confirmPasswordPanel.Name = "confirmPasswordPanel";
+            this.confirmPasswordPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.confirmPasswordPanel.Size = new System.Drawing.Size(580, 38);
+            this.confirmPasswordPanel.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.confirmPasswordPanel.TabIndex = 7;
+            this.confirmPasswordPanel.Text = "panel3";
+            // 
+            // tbConfirmPassword
+            // 
+            this.tbConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
+            this.tbConfirmPassword.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tbConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbConfirmPassword.ForeColor = System.Drawing.SystemColors.Window;
+            this.tbConfirmPassword.Location = new System.Drawing.Point(321, 5);
+            this.tbConfirmPassword.Name = "tbConfirmPassword";
+            this.tbConfirmPassword.PasswordChar = '*';
+            this.tbConfirmPassword.Size = new System.Drawing.Size(254, 29);
+            this.tbConfirmPassword.TabIndex = 2;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(142, 5);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(17, 21);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "*";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.Control;
+            this.label12.Location = new System.Drawing.Point(5, 5);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(137, 21);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Confirm Password";
             // 
             // contactNumPanel
             // 
@@ -193,9 +252,9 @@
             this.contactNumPanel.Controls.Add(this.tbContactNum);
             this.contactNumPanel.Controls.Add(this.label8);
             this.contactNumPanel.Controls.Add(this.label9);
-            this.contactNumPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.contactNumPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.contactNumPanel.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(50)))));
-            this.contactNumPanel.Location = new System.Drawing.Point(0, 114);
+            this.contactNumPanel.Location = new System.Drawing.Point(0, 158);
             this.contactNumPanel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.contactNumPanel.Name = "contactNumPanel";
             this.contactNumPanel.Padding = new System.Windows.Forms.Padding(5);
@@ -349,7 +408,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSave.Location = new System.Drawing.Point(514, 229);
+            this.btnSave.Location = new System.Drawing.Point(514, 273);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(107, 37);
             this.btnSave.TabIndex = 32;
@@ -366,14 +425,14 @@
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPanel.Location = new System.Drawing.Point(0, 36);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(670, 287);
+            this.contentPanel.Size = new System.Drawing.Size(670, 341);
             this.contentPanel.TabIndex = 33;
             // 
             // AddUser
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(670, 323);
+            this.ClientSize = new System.Drawing.Size(670, 377);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -385,6 +444,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.userDetailsPanel.ResumeLayout(false);
+            this.confirmPasswordPanel.ResumeLayout(false);
+            this.confirmPasswordPanel.PerformLayout();
             this.contactNumPanel.ResumeLayout(false);
             this.contactNumPanel.PerformLayout();
             this.passwordPanel.ResumeLayout(false);
@@ -422,5 +483,9 @@
         private System.Windows.Forms.Button btnSave;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private System.Windows.Forms.Panel contentPanel;
+        private ReaLTaiizor.Controls.Panel confirmPasswordPanel;
+        private System.Windows.Forms.TextBox tbConfirmPassword;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
     }
 }

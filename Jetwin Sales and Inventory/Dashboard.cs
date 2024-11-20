@@ -13,17 +13,17 @@ namespace Jetwin_Sales_and_Inventory
 {
     public partial class Dashboard : Form
     {
-        private DataRefreshManager refreshManager;
+        //private DataRefreshManager refreshManager;
         public Dashboard()
         {
             InitializeComponent();
 
-            refreshManager = new DataRefreshManager();
+            /*refreshManager = new DataRefreshManager();
             refreshManager.OnDataUpdated += RefreshDashboardData;
             refreshManager.Start();
-            RefreshDashboardData(); //INITIAL LOAD
+            RefreshDashboardData(); //INITIAL LOAD*/
         }
-        private void RefreshDashboardData()
+        /*private void RefreshDashboardData()
         {
             if (InvokeRequired) //PREVENT CROSS THREAD ERROR
             {
@@ -40,6 +40,6 @@ namespace Jetwin_Sales_and_Inventory
         {
             refreshManager.Dispose();
             base.OnFormClosed(e);
-        }
+        }*/
     }
 }

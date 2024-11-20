@@ -22,7 +22,17 @@ namespace Jetwin_Sales_and_Inventory.Maintenance_Submodules
         public AddUser()
         {
             InitializeComponent();
+            tbContactNum.KeyPress += ContactNum_KeyPress;
             this.FormClosing += (s, e) => { e.Cancel = true; this.Hide(); }; //CLOSE THE FORM
+        }
+
+        private void ContactNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //ONLY ALLOW NUMBERS AS INPUT
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -31,33 +41,35 @@ namespace Jetwin_Sales_and_Inventory.Maintenance_Submodules
             {
                 MessageBox.Show("User added successfully.");
                 UserAdded?.Invoke(this, EventArgs.Empty);
-                InputValidator.ClearFields(tbEmployeeName, tbUsername, tbPassword, tbContactNum);
+                InputValidator.ClearFields(tbEmployeeName, tbUsername, tbPassword, tbConfirmPassword, tbContactNum);
                 this.Close();
             }
         }
-        
         private bool isInputValid()
         {
-            string employeeName = tbEmployeeName.Text;
-            string username = tbUsername.Text;
+            string employeeName = tbEmployeeName.Text.Trim();
+            string username = tbUsername.Text.Trim();
             string password = tbPassword.Text;
+            string confirmPassword = tbConfirmPassword.Text;
             string contactNum = tbContactNum.Text;
 
             return InputValidator.IsFieldFilled(employeeName, "Employee Name") &&
                 InputValidator.IsFieldFilled(username, "Username") &&
                 InputValidator.IsFieldFilled(password, "Password") &&
+                InputValidator.IsFieldFilled(confirmPassword, "Confirm Password") &&
                 InputValidator.IsFieldFilled(contactNum, "Contact Number") &&
-                InputValidator.IsEmployeeNameValid(employeeName) &&
-                InputValidator.IsUsernameValid(username) &&
+                InputValidator.IsNameValid(employeeName, username) &&
+                InputValidator.IsUserNotExists(employeeName, username, contactNum) &&
                 InputValidator.IsContactNumberValid(contactNum) &&
-                InputValidator.IsPasswordValid(password);
+                InputValidator.IsPasswordValid(password) &&
+                InputValidator.IsPasswordMatching(password, confirmPassword);
         }
         
         private bool tryAddUserToDatabase()
         {
             try
             {
-                const string insertToUserQuery = "INSERT INTO SystemUsers (Username, EmployeeName, Password, ContactNum, Role, StatusID, DateCreated) " +
+                const string insertToUserQuery = "INSERT INTO Staff (Username, EmployeeName, Password, ContactNum, RoleName, StatusID, DateCreated) " +
                         "VALUES (@Username, @EmployeeName, @Password, @ContactNum, 'Staff', @StatusID, GETDATE())";
                 int Active = 1; //IN STATUS TABLE, STATUSID: 1 = 'ACTIVE'
 

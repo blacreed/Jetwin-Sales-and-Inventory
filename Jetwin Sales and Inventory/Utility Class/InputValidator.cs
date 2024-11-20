@@ -42,27 +42,33 @@ namespace Jetwin_Sales_and_Inventory.Utility_Class
          * password has a minimum length of 8 characters allowing a mix of letters, numbers, and special character, (consider hashing for security purposes)
          * contact number has a minimum length of 9 digits and maximum of 15 digits
          */
-        public static bool IsEmployeeNameValid(string input)
+        public static bool IsNameValid(string employeeName, string username)
         {
-            if (!Regex.IsMatch(input, @"^[a-zA-Z\s]{1,50}$"))
+            if (!Regex.IsMatch(employeeName, @"^[a-zA-Z\s]{1,50}$"))
             {
                 MessageBox.Show("Employee Name must contain only letters and spaces, with a maximum of 50 characters.");
                 return false;
             }
-            return true;
-        }
-        public static bool IsUsernameValid(string input)
-        {
-            if (!Regex.IsMatch(input, @"^[a-zA-Z0-9]+$") || input.Length < 5 || input.Length > 20)
+            if (!Regex.IsMatch(username, @"^[a-zA-Z0-9]+$") || username.Length < 5 || username.Length > 20)
             {
                 MessageBox.Show($"Username must be alphanumeric with a length of 5-20 characters.");
                 return false;
             }
-            if (DatabaseHelper.IsUsernameTaken(input))
+            return true;
+        }
+        public static bool IsUserNotExists(string employeeName, string username, string contactNum)
+        {
+            if (DatabaseHelper.IsEmployeeDuplicate(employeeName) || DatabaseHelper.IsContactNumberDuplicate(contactNum))
+            {
+                MessageBox.Show("Employee already exists.");
+                return false;
+            }
+            if (DatabaseHelper.IsUsernameTaken(username))
             {
                 MessageBox.Show("Username already exists. Choose a different username.");
                 return false;
             }
+            
             return true;
         }
         
@@ -75,17 +81,32 @@ namespace Jetwin_Sales_and_Inventory.Utility_Class
             }
             return true;
         }
-        
-        //FOR addCategory FORM
-        public static bool IsCategoryValid(string input)
+        public static bool IsPasswordMatching(string input, string input2)
         {
-            if(DatabaseHelper.IsCategoryNameDuplicate(input))
+            if(!string.Equals(input, input2))
             {
-                MessageBox.Show("Brand already exists.");
+                MessageBox.Show("Passwords do not match.");
                 return false;
             }
             return true;
         }
+
+        //FOR AddClassification FORM
+        public static bool IsUniqueClassification(string classificationName, string tableName)
+        {
+            if(!DatabaseHelper.IsUniqueClassification(classificationName, tableName))
+            {
+                MessageBox.Show($"{classificationName} already exists.");
+                return false;
+            }
+            return true;
+        }
+
+        public static bool IsUniqueAttributeValue(string attributeValue, int attributeTypeID)
+        {
+            return DatabaseHelper.IsUniqueAttributeValue(attributeValue, attributeTypeID);
+        }
+
 
         //FOR addSupplier FORM
         public static bool IsSupplierValid(string supplierName, string contactNum)
@@ -99,39 +120,11 @@ namespace Jetwin_Sales_and_Inventory.Utility_Class
         }
 
         //FOR addInventory FORM
-        public static bool IsStockValid(string input)
-        {
-            if (!int.TryParse(input, out int stock) || stock <= 0)
-            {
-                MessageBox.Show("Stock must be a positive integer.");
-                return false;
-            }
-            return true;
-        }
         public static bool IsSalePriceValid(string input)
         {
             if (!decimal.TryParse(input, out decimal salePrice) || salePrice <= 0)
             {
                 MessageBox.Show("Sale Price must be a positive number.");
-                return false;
-            }
-            return true;
-        }
-        public static bool IsLowLevelLimitValid(string input)
-        {
-            if (!string.IsNullOrWhiteSpace(input) && (!int.TryParse(input, out int lowLevel) || lowLevel < 0))
-            {
-                MessageBox.Show($"Low Level Limit must be a non-negative integer.");
-                return false;
-            }
-            return true;
-        }
-
-        public static bool IsPartNumberAndLocationValid(string input, string fieldName)
-        {
-            if (!Regex.IsMatch(input, @"^[a-zA-Z0-9\-/_]*$"))
-            {
-                MessageBox.Show($"{fieldName} contains invalid characters.");
                 return false;
             }
             return true;
