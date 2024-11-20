@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.moduleNamePanel = new System.Windows.Forms.Panel();
             this.categorySearchFieldPanel = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -101,7 +107,7 @@
             this.moduleNamePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.moduleNamePanel.Location = new System.Drawing.Point(0, 0);
             this.moduleNamePanel.Name = "moduleNamePanel";
-            this.moduleNamePanel.Size = new System.Drawing.Size(748, 61);
+            this.moduleNamePanel.Size = new System.Drawing.Size(1024, 61);
             this.moduleNamePanel.TabIndex = 6;
             // 
             // categorySearchFieldPanel
@@ -111,7 +117,7 @@
             this.categorySearchFieldPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.categorySearchFieldPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.categorySearchFieldPanel.Controls.Add(this.pictureBox3);
-            this.categorySearchFieldPanel.Location = new System.Drawing.Point(401, 20);
+            this.categorySearchFieldPanel.Location = new System.Drawing.Point(677, 20);
             this.categorySearchFieldPanel.Name = "categorySearchFieldPanel";
             this.categorySearchFieldPanel.Size = new System.Drawing.Size(335, 29);
             this.categorySearchFieldPanel.TabIndex = 31;
@@ -279,7 +285,7 @@
             this.doublePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.doublePanel.Location = new System.Drawing.Point(0, 0);
             this.doublePanel.Name = "doublePanel";
-            this.doublePanel.Size = new System.Drawing.Size(238, 299);
+            this.doublePanel.Size = new System.Drawing.Size(330, 581);
             this.doublePanel.TabIndex = 9;
             // 
             // panel8
@@ -290,18 +296,44 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 102);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(238, 197);
+            this.panel8.Size = new System.Drawing.Size(330, 479);
             this.panel8.TabIndex = 10;
             // 
             // recentsDataGrid
             // 
+            this.recentsDataGrid.AllowUserToAddRows = false;
+            this.recentsDataGrid.AllowUserToDeleteRows = false;
+            this.recentsDataGrid.AllowUserToResizeColumns = false;
+            this.recentsDataGrid.AllowUserToResizeRows = false;
             this.recentsDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.recentsDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.recentsDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.recentsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.recentsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.recentsDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.recentsDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.recentsDataGrid.Location = new System.Drawing.Point(0, 23);
             this.recentsDataGrid.Name = "recentsDataGrid";
-            this.recentsDataGrid.Size = new System.Drawing.Size(238, 174);
+            this.recentsDataGrid.ReadOnly = true;
+            this.recentsDataGrid.ShowCellErrors = false;
+            this.recentsDataGrid.ShowCellToolTips = false;
+            this.recentsDataGrid.ShowEditingIcon = false;
+            this.recentsDataGrid.ShowRowErrors = false;
+            this.recentsDataGrid.Size = new System.Drawing.Size(330, 456);
             this.recentsDataGrid.TabIndex = 9;
             // 
             // panel9
@@ -312,7 +344,7 @@
             this.panel9.Location = new System.Drawing.Point(0, 0);
             this.panel9.Name = "panel9";
             this.panel9.Padding = new System.Windows.Forms.Padding(3);
-            this.panel9.Size = new System.Drawing.Size(238, 23);
+            this.panel9.Size = new System.Drawing.Size(330, 23);
             this.panel9.TabIndex = 11;
             // 
             // label11
@@ -335,7 +367,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 24);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(238, 78);
+            this.panel7.Size = new System.Drawing.Size(330, 78);
             this.panel7.TabIndex = 8;
             // 
             // label9
@@ -368,7 +400,7 @@
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new System.Windows.Forms.Padding(10, 3, 3, 10);
-            this.panel6.Size = new System.Drawing.Size(238, 24);
+            this.panel6.Size = new System.Drawing.Size(330, 24);
             this.panel6.TabIndex = 0;
             // 
             // todaylbl
@@ -390,18 +422,45 @@
             this.highestSellingPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.highestSellingPanel.Location = new System.Drawing.Point(0, 0);
             this.highestSellingPanel.Name = "highestSellingPanel";
-            this.highestSellingPanel.Size = new System.Drawing.Size(237, 299);
+            this.highestSellingPanel.Size = new System.Drawing.Size(329, 581);
             this.highestSellingPanel.TabIndex = 10;
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
             this.dataGridView2.Location = new System.Drawing.Point(0, 23);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(237, 276);
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.ShowCellErrors = false;
+            this.dataGridView2.ShowCellToolTips = false;
+            this.dataGridView2.ShowEditingIcon = false;
+            this.dataGridView2.ShowRowErrors = false;
+            this.dataGridView2.Size = new System.Drawing.Size(329, 558);
             this.dataGridView2.TabIndex = 13;
             // 
             // panel12
@@ -412,7 +471,7 @@
             this.panel12.Location = new System.Drawing.Point(0, 0);
             this.panel12.Name = "panel12";
             this.panel12.Padding = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.panel12.Size = new System.Drawing.Size(237, 23);
+            this.panel12.Size = new System.Drawing.Size(329, 23);
             this.panel12.TabIndex = 12;
             // 
             // label12
@@ -435,18 +494,41 @@
             this.latestSalesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.latestSalesPanel.Location = new System.Drawing.Point(0, 0);
             this.latestSalesPanel.Name = "latestSalesPanel";
-            this.latestSalesPanel.Size = new System.Drawing.Size(237, 299);
+            this.latestSalesPanel.Size = new System.Drawing.Size(329, 581);
             this.latestSalesPanel.TabIndex = 11;
             // 
             // dataGridView3
             // 
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView3.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
             this.dataGridView3.Location = new System.Drawing.Point(0, 23);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(237, 276);
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.ShowCellErrors = false;
+            this.dataGridView3.ShowCellToolTips = false;
+            this.dataGridView3.ShowEditingIcon = false;
+            this.dataGridView3.ShowRowErrors = false;
+            this.dataGridView3.Size = new System.Drawing.Size(329, 558);
             this.dataGridView3.TabIndex = 14;
             // 
             // panel13
@@ -457,7 +539,7 @@
             this.panel13.Location = new System.Drawing.Point(0, 0);
             this.panel13.Name = "panel13";
             this.panel13.Padding = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.panel13.Size = new System.Drawing.Size(237, 23);
+            this.panel13.Size = new System.Drawing.Size(329, 23);
             this.panel13.TabIndex = 12;
             // 
             // label13
@@ -481,7 +563,7 @@
             this.boxNumberPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.boxNumberPanel.Location = new System.Drawing.Point(0, 61);
             this.boxNumberPanel.Name = "boxNumberPanel";
-            this.boxNumberPanel.Size = new System.Drawing.Size(748, 104);
+            this.boxNumberPanel.Size = new System.Drawing.Size(1024, 104);
             this.boxNumberPanel.TabIndex = 12;
             // 
             // firstPanel
@@ -492,7 +574,7 @@
             this.firstPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.firstPanel.Location = new System.Drawing.Point(11, 11);
             this.firstPanel.Name = "firstPanel";
-            this.firstPanel.Size = new System.Drawing.Size(237, 299);
+            this.firstPanel.Size = new System.Drawing.Size(329, 581);
             this.firstPanel.TabIndex = 33;
             // 
             // secondPanel
@@ -501,9 +583,9 @@
             this.secondPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.secondPanel.Controls.Add(this.highestSellingPanel);
             this.secondPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.secondPanel.Location = new System.Drawing.Point(255, 11);
+            this.secondPanel.Location = new System.Drawing.Point(347, 11);
             this.secondPanel.Name = "secondPanel";
-            this.secondPanel.Size = new System.Drawing.Size(237, 299);
+            this.secondPanel.Size = new System.Drawing.Size(329, 581);
             this.secondPanel.TabIndex = 34;
             // 
             // thirdPanel
@@ -512,9 +594,9 @@
             this.thirdPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.thirdPanel.Controls.Add(this.doublePanel);
             this.thirdPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.thirdPanel.Location = new System.Drawing.Point(499, 11);
+            this.thirdPanel.Location = new System.Drawing.Point(683, 11);
             this.thirdPanel.Name = "thirdPanel";
-            this.thirdPanel.Size = new System.Drawing.Size(238, 299);
+            this.thirdPanel.Size = new System.Drawing.Size(330, 581);
             this.thirdPanel.TabIndex = 35;
             // 
             // contentPanel
@@ -536,7 +618,7 @@
             this.contentPanel.Padding = new System.Windows.Forms.Padding(7);
             this.contentPanel.RowCount = 1;
             this.contentPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.contentPanel.Size = new System.Drawing.Size(748, 321);
+            this.contentPanel.Size = new System.Drawing.Size(1024, 603);
             this.contentPanel.TabIndex = 14;
             // 
             // Dashboard
@@ -544,7 +626,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(748, 486);
+            this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.boxNumberPanel);
             this.Controls.Add(this.moduleNamePanel);

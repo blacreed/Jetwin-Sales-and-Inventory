@@ -60,7 +60,7 @@
             this.salesDataGrid.Name = "salesDataGrid";
             this.salesDataGrid.ReadOnly = true;
             this.salesDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.salesDataGrid.Size = new System.Drawing.Size(724, 265);
+            this.salesDataGrid.Size = new System.Drawing.Size(1000, 547);
             this.salesDataGrid.TabIndex = 8;
             // 
             // btnSalesAdd
@@ -70,7 +70,7 @@
             this.btnSalesAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalesAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalesAdd.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSalesAdd.Location = new System.Drawing.Point(605, 149);
+            this.btnSalesAdd.Location = new System.Drawing.Point(881, 149);
             this.btnSalesAdd.Name = "btnSalesAdd";
             this.btnSalesAdd.Size = new System.Drawing.Size(107, 37);
             this.btnSalesAdd.TabIndex = 9;
@@ -83,7 +83,7 @@
             this.moduleNamePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.moduleNamePanel.Location = new System.Drawing.Point(0, 0);
             this.moduleNamePanel.Name = "moduleNamePanel";
-            this.moduleNamePanel.Size = new System.Drawing.Size(748, 61);
+            this.moduleNamePanel.Size = new System.Drawing.Size(1024, 61);
             this.moduleNamePanel.TabIndex = 10;
             // 
             // lblJetwin
@@ -106,9 +106,6 @@
             this.searchFieldPanel.Size = new System.Drawing.Size(371, 40);
             this.searchFieldPanel.TabIndex = 17;
             // 
-            // textBoxUnderline1
-            // 
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -125,7 +122,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(748, 486);
+            this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.searchFieldPanel);
             this.Controls.Add(this.moduleNamePanel);
             this.Controls.Add(this.btnSalesAdd);

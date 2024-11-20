@@ -38,7 +38,7 @@ namespace Jetwin_Sales_and_Inventory.Maintenance_Submodules
             {
                 MessageBox.Show("Supplier added successfully.");
                 SupplierAdded?.Invoke(this, EventArgs.Empty);
-                InputValidator.ClearFields(tbSupplierName, tbAgentName, tbContactNum, tbRemarks);
+                InputValidator.ClearFields(tbSupplierName, tbContactPerson, tbContactNum, tbRemarks);
                 this.Close();
             }
 
@@ -46,11 +46,11 @@ namespace Jetwin_Sales_and_Inventory.Maintenance_Submodules
         private bool isInputValid()
         {
             string supplierName = tbSupplierName.Text;
-            string agentName = tbAgentName.Text;
+            string contactPerson = tbContactPerson.Text;
             string contactNum = tbContactNum.Text;
 
             return InputValidator.IsFieldFilled(supplierName, "Supplier Name") &&
-                InputValidator.IsFieldFilled(agentName, "Agent Name") &&
+                InputValidator.IsFieldFilled(contactPerson, "Contact Person") &&
                 InputValidator.IsContactNumberValid(contactNum) &&
                 InputValidator.IsSupplierValid(supplierName, contactNum);
         }
@@ -60,23 +60,24 @@ namespace Jetwin_Sales_and_Inventory.Maintenance_Submodules
             {
                 //INSERT THE CONTACT NUMBER AND ADDRESS OF SUPPLIER TO CONTACTINFO TABLE
                 //AND THEN GET THE CONTACT ID OF THAT NEW INSERTED CONTACT
-                const string insertToContactQuery = "INSERT INTO ContactInfo (ContactNum, Address) " +
-                                      "OUTPUT INSERTED.ContactID VALUES (@ContactNum, @Address)";
+                const string insertToContactQuery = "INSERT INTO SupplierContactInfo (ContactNum, ContactPerson, Address) " +
+                                      "OUTPUT INSERTED.ContactID VALUES (@ContactNum, @ContactPerson, @Address)";
                 int Active = 1; //IN STATUS TABLE, STATUSID: 1 = 'ACTIVE'
 
                 var contactParameters = new Dictionary<string, object>
                 {
                     { "@ContactNum", tbContactNum.Text.Trim() },
+                    { "@ContactPerson", tbContactPerson.Text.Trim() },
                     { "@Address", tbAddress.Text }
                 };
                 int contactId = Convert.ToInt32(DatabaseHelper.ExecuteScalar(insertToContactQuery, contactParameters));
                 Console.WriteLine(contactId);
-                const string insertToSupplierQuery = "INSERT INTO Supplier (SupplierName, ContactID, Remarks, StatusID) " +
-                                       "VALUES (@SupplierName, @ContactID, @Remarks, @StatusID)";
+                const string insertToSupplierQuery = "INSERT INTO Supplier (Supplier, ContactID, Remarks, StatusID) " +
+                                       "VALUES (@Supplier, @ContactID, @Remarks, @StatusID)";
                 
                 var supplierParameters = new Dictionary<string, object>
                 {
-                    { "@SupplierName", tbSupplierName.Text },
+                    { "@Supplier", tbSupplierName.Text },
                     { "@ContactID", contactId },
                     { "@Remarks", tbRemarks.Text },
                     { "@StatusID", Active }
@@ -122,6 +123,15 @@ namespace Jetwin_Sales_and_Inventory.Maintenance_Submodules
             {
                 Point p = PointToScreen(e.Location);
                 Location = new Point(p.X - this._start_point.X, p.Y - this._start_point.Y);
+            }
+        }
+
+        //ONLY ALLOW CHARACTERS
+        private void tbContactPerson_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
             }
         }
     }

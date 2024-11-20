@@ -41,14 +41,14 @@
             this.tbContactNum = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.agentPanel = new ReaLTaiizor.Controls.Panel();
-            this.tbAgentName = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.addressPanel = new ReaLTaiizor.Controls.Panel();
             this.tbAddress = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.agentPanel = new ReaLTaiizor.Controls.Panel();
+            this.tbContactPerson = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.supplierPanel = new ReaLTaiizor.Controls.Panel();
             this.tbSupplierName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,8 +59,8 @@
             this.userDetailsPanel.SuspendLayout();
             this.remarksPanel.SuspendLayout();
             this.contactNumPanel.SuspendLayout();
-            this.agentPanel.SuspendLayout();
             this.addressPanel.SuspendLayout();
+            this.agentPanel.SuspendLayout();
             this.supplierPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -144,8 +144,8 @@
             // 
             this.userDetailsPanel.Controls.Add(this.remarksPanel);
             this.userDetailsPanel.Controls.Add(this.contactNumPanel);
-            this.userDetailsPanel.Controls.Add(this.agentPanel);
             this.userDetailsPanel.Controls.Add(this.addressPanel);
+            this.userDetailsPanel.Controls.Add(this.agentPanel);
             this.userDetailsPanel.Controls.Add(this.supplierPanel);
             this.userDetailsPanel.Location = new System.Drawing.Point(53, 41);
             this.userDetailsPanel.Name = "userDetailsPanel";
@@ -244,58 +244,6 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Contact Num";
             // 
-            // agentPanel
-            // 
-            this.agentPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
-            this.agentPanel.Controls.Add(this.tbAgentName);
-            this.agentPanel.Controls.Add(this.label6);
-            this.agentPanel.Controls.Add(this.label7);
-            this.agentPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.agentPanel.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(50)))));
-            this.agentPanel.Location = new System.Drawing.Point(0, 76);
-            this.agentPanel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
-            this.agentPanel.Name = "agentPanel";
-            this.agentPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.agentPanel.Size = new System.Drawing.Size(580, 38);
-            this.agentPanel.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.agentPanel.TabIndex = 6;
-            this.agentPanel.Text = "panel3";
-            // 
-            // tbAgentName
-            // 
-            this.tbAgentName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
-            this.tbAgentName.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tbAgentName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAgentName.ForeColor = System.Drawing.SystemColors.Window;
-            this.tbAgentName.Location = new System.Drawing.Point(321, 5);
-            this.tbAgentName.Name = "tbAgentName";
-            this.tbAgentName.Size = new System.Drawing.Size(254, 29);
-            this.tbAgentName.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(102, 5);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(17, 21);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "*";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(5, 5);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 21);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Agent Name";
-            // 
             // addressPanel
             // 
             this.addressPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
@@ -304,7 +252,7 @@
             this.addressPanel.Controls.Add(this.label5);
             this.addressPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.addressPanel.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(50)))));
-            this.addressPanel.Location = new System.Drawing.Point(0, 38);
+            this.addressPanel.Location = new System.Drawing.Point(0, 76);
             this.addressPanel.Name = "addressPanel";
             this.addressPanel.Padding = new System.Windows.Forms.Padding(5);
             this.addressPanel.Size = new System.Drawing.Size(580, 38);
@@ -331,9 +279,8 @@
             this.label4.ForeColor = System.Drawing.Color.Red;
             this.label4.Location = new System.Drawing.Point(71, 5);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(17, 21);
+            this.label4.Size = new System.Drawing.Size(0, 21);
             this.label4.TabIndex = 1;
-            this.label4.Text = "*";
             // 
             // label5
             // 
@@ -346,6 +293,59 @@
             this.label5.Size = new System.Drawing.Size(66, 21);
             this.label5.TabIndex = 0;
             this.label5.Text = "Address";
+            // 
+            // agentPanel
+            // 
+            this.agentPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
+            this.agentPanel.Controls.Add(this.tbContactPerson);
+            this.agentPanel.Controls.Add(this.label6);
+            this.agentPanel.Controls.Add(this.label7);
+            this.agentPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.agentPanel.EdgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(50)))));
+            this.agentPanel.Location = new System.Drawing.Point(0, 38);
+            this.agentPanel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
+            this.agentPanel.Name = "agentPanel";
+            this.agentPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.agentPanel.Size = new System.Drawing.Size(580, 38);
+            this.agentPanel.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.agentPanel.TabIndex = 6;
+            this.agentPanel.Text = "panel3";
+            // 
+            // tbContactPerson
+            // 
+            this.tbContactPerson.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(64)))));
+            this.tbContactPerson.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tbContactPerson.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbContactPerson.ForeColor = System.Drawing.SystemColors.Window;
+            this.tbContactPerson.Location = new System.Drawing.Point(321, 5);
+            this.tbContactPerson.Name = "tbContactPerson";
+            this.tbContactPerson.Size = new System.Drawing.Size(254, 29);
+            this.tbContactPerson.TabIndex = 2;
+            this.tbContactPerson.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbContactPerson_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(119, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(17, 21);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "*";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(5, 5);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(114, 21);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Contact Person";
             // 
             // supplierPanel
             // 
@@ -381,7 +381,7 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Left;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(119, 5);
+            this.label2.Location = new System.Drawing.Point(73, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 21);
             this.label2.TabIndex = 1;
@@ -395,9 +395,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(5, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 21);
+            this.label1.Size = new System.Drawing.Size(68, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Supplier Name";
+            this.label1.Text = "Supplier";
             // 
             // btnSave
             // 
@@ -434,10 +434,10 @@
             this.remarksPanel.PerformLayout();
             this.contactNumPanel.ResumeLayout(false);
             this.contactNumPanel.PerformLayout();
-            this.agentPanel.ResumeLayout(false);
-            this.agentPanel.PerformLayout();
             this.addressPanel.ResumeLayout(false);
             this.addressPanel.PerformLayout();
+            this.agentPanel.ResumeLayout(false);
+            this.agentPanel.PerformLayout();
             this.supplierPanel.ResumeLayout(false);
             this.supplierPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -460,7 +460,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private ReaLTaiizor.Controls.Panel agentPanel;
-        private System.Windows.Forms.TextBox tbAgentName;
+        private System.Windows.Forms.TextBox tbContactPerson;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private ReaLTaiizor.Controls.Panel addressPanel;
